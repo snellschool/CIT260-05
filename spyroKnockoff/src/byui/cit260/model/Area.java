@@ -20,6 +20,30 @@ public class Area implements Serializable {
 
     /**
      * 
+     */
+    public Area() {
+        this.loc = null;
+        this.gems = 0;
+        this.relics = 0;
+        this.riddle = null;
+    }
+
+    /**
+     * 
+     * @param loc
+     * @param gems
+     * @param relics
+     * @param riddle 
+     */
+    public Area(Location loc, int gems, int relics, Riddle riddle) {
+        this.loc = loc;
+        this.gems = gems;
+        this.relics = relics;
+        this.riddle = riddle;
+    }
+
+    /**
+     * 
      * @return 
      */
     public Location getLoc() {

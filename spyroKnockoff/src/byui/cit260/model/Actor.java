@@ -12,14 +12,14 @@ import java.util.Objects;
  *
  * @author megnol
  */
-public class Character implements Serializable{
+public class Actor implements Serializable{
     private Location currLoc;
     private Location prevLoc;
     
     /**
      * 
      */
-    public Character() {
+    public Actor() {
     }
 
     /**
@@ -27,7 +27,7 @@ public class Character implements Serializable{
      * @param currLoc
      * @param prevLoc 
      */
-    public Character(Location currLoc, Location prevLoc) {
+    public Actor(Location currLoc, Location prevLoc) {
         this.currLoc = currLoc;
         this.prevLoc = prevLoc;
     }
@@ -92,7 +92,7 @@ public class Character implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Character other = (Character) obj;
+        final Actor other = (Actor) obj;
         if (!Objects.equals(this.currLoc, other.currLoc)) {
             return false;
         }
