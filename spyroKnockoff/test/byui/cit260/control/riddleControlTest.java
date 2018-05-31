@@ -45,5 +45,37 @@ public class riddleControlTest {
         expResult = -1;
         result = riddleControl.riddleMathFirst(choiceOne, choiceTwo);
         assertEquals(expResult, result);
+        
+        // fourth test
+        System.out.println("riddleMathFirst");
+        choiceOne = 4;
+        choiceTwo = 0;
+        expResult = -1;
+        result = riddleControl.riddleMathFirst(choiceOne, choiceTwo);
+        assertEquals(expResult, result);
+        
+        // fifth test
+        System.out.println("riddleMathFirst");
+        choiceOne = 1;
+        choiceTwo = 4;
+        expResult = 0;
+        result = riddleControl.riddleMathFirst(choiceOne, choiceTwo);
+        assertEquals(expResult, result);
+        
+        // sixth test
+        System.out.println("riddleMathFirst");
+        choiceOne = 4;
+        choiceTwo = 1;
+        expResult = 0;
+        result = riddleControl.riddleMathFirst(choiceOne, choiceTwo);
+        assertEquals(expResult, result);
+        
+        // seventh test
+        System.out.println("riddleMathFirst");
+        choiceOne = 4;
+        choiceTwo = 4;
+        expResult = 0;
+        result = riddleControl.riddleMathFirst(choiceOne, choiceTwo);
+        assertEquals(expResult, result);
     } // end of testRiddleMathFirst()
 } // end of class riddleControlTest

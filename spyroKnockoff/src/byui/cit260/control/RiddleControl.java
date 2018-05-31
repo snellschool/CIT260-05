@@ -17,19 +17,68 @@ public class riddleControl {
         if((choiceOne <= 0 || choiceOne >= 5) || (choiceTwo <= 0 || choiceTwo >= 5))
             return -1; // if the user entered invalid choices
         
-        //	SWITCH(choiceOne)
-//		1: xVal = 3
-//		2: xVal = 7
-//		3: xVal = 28
-//		4: xVal = 42
-//
-//	SWITCH(choiceTwo)
-//		1: yVal = 42
-//		2: yVal = 0
-//		3: yVal = -5
-//		4: yVal = 5
-//
+            switch(choiceOne) {
+                case 1: xVal = 3;
+                    break;
+                case 2: xVal = 7;
+                    break;
+                case 3: xVal = 28;
+                    break;
+                case 4: xVal = 42;
+                    break;
+            }
+
+            switch(choiceTwo) {
+                case 1: yVal = 42;
+                    break;
+                case 2: yVal = 0;
+                    break;
+                case 3: yVal = -5;
+                    break;
+                case 4: yVal = 5;
+                    break;
+            }
+
     return (((5 * xVal) + (3 * yVal) - 7) == (-7)) ? 1 : 0;
 //END
     } // end of riddleMathFirst()
+    
+    /**
+     * second math problem 
+     * author Megan
+     */
+    
+    public static int riddleMathSecond(int choiceOne, int choiceTwo) {
+        int xVal = 0;
+        int yVal = 0;
+        
+        if ((choiceOne <= 0 || choiceOne >= 5) || (choiceTwo <= 0 || choiceTwo >= 5))
+            return -1; //if the user entered invalid choices
+        
+        switch(choiceOne) {
+            case 1: xVal = 3;
+                break;
+            case 2: xVal = 7;
+                break;
+            case 3: xVal = 0;
+                break;
+            case 4: xVal = -2;
+                break;
+            }
+
+	switch(choiceTwo) {
+            case 1: yVal = -8;
+                break;
+            case 2: yVal = 2;
+                break;
+            case 3: yVal = 10;
+                break;
+            case 4: yVal = -5;
+                break;
+            }
+	
+        return (((3 * xVal) - (5 * yVal) + 2) == (-8)) ? 1 : 0;
+	
+    } // end of riddleMathSecond ()
+    
 } // end of class RiddleControl
