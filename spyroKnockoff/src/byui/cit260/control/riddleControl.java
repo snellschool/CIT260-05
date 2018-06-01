@@ -10,6 +10,12 @@ package byui.cit260.control;
  * @author megnol & Dallin Snell
  */
 public class riddleControl {
+    /**
+     * 
+     * @param choiceOne
+     * @param choiceTwo
+     * @return error or success code
+     */
     public static int riddleMathFirst(int choiceOne, int choiceTwo) {
         int xVal = 0;
         int yVal = 0;
@@ -17,34 +23,38 @@ public class riddleControl {
         if((choiceOne <= 0 || choiceOne >= 5) || (choiceTwo <= 0 || choiceTwo >= 5))
             return -1; // if the user entered invalid choices
         
-            switch(choiceOne) {
-                case 1: xVal = 3;
-                    break;
-                case 2: xVal = 7;
-                    break;
-                case 3: xVal = 28;
-                    break;
-                case 4: xVal = 42;
-                    break;
-            }
+        switch(choiceOne) {
+            case 1: xVal = 3;
+                break;
+            case 2: xVal = 7;
+                break;
+            case 3: xVal = 28;
+                break;
+            case 4: xVal = 42;
+                break;
+        }
 
-            switch(choiceTwo) {
-                case 1: yVal = 42;
-                    break;
-                case 2: yVal = 0;
-                    break;
-                case 3: yVal = -5;
-                    break;
-                case 4: yVal = 5;
-                    break;
-            }
+        switch(choiceTwo) {
+            case 1: yVal = 42;
+                break;
+            case 2: yVal = 0;
+                break;
+            case 3: yVal = -5;
+                break;
+            case 4: yVal = 5;
+                break;
+        }
 
     return (((5 * xVal) + (3 * yVal) - 7) == (-7)) ? 1 : 0;
     } // end of riddleMathFirst()
     
     /**
-     * second math problem 
-     * @author Megan
+     * 
+     * @author megnol
+     * 
+     * @param choiceOne
+     * @param choiceTwo
+     * @return error or success code
      */
     public static int riddleMathSecond(int choiceOne, int choiceTwo) {
         int xVal = 0;
@@ -79,6 +89,12 @@ public class riddleControl {
 	
     } // end of riddleMathSecond ()
     
+    /**
+     * 
+     * @param choiceOne
+     * @param choiceTwo
+     * @return error or success code
+     */
     public static int riddleMathThird(int choiceOne, int choiceTwo) {
         int xVal = 0;
         int yVal = 0;
