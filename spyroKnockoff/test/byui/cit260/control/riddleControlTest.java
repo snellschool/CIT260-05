@@ -84,15 +84,62 @@ public class riddleControlTest {
      */
     @Test
     public void testRiddleMathSecond() {
-        System.out.println("riddleMathSecond-1");
-        int choiceOne = 0;
-        int choiceTwo = 0;
-        int expResult = 0;
-        int result = riddleControl.riddleMathSecond(choiceOne, choiceTwo);
+        //first test
+        System.out.println("riddleMathFirst-1");
+        int choiceOne = 3;
+        int choiceTwo = 2;
+        int expResult = 1;
+        int result = riddleControl.riddleMathFirst(choiceOne, choiceTwo);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+        
+        // second test
+        System.out.println("riddleMathFirst-2");
+        choiceOne = 0;
+        choiceTwo = 1;
+        expResult = -1;
+        result = riddleControl.riddleMathFirst(choiceOne, choiceTwo);
+        assertEquals(expResult, result);
+        
+        // third test
+        System.out.println("riddleMathFirst-3");
+        choiceOne = 5;
+        choiceTwo = 2;
+        expResult = -1;
+        result = riddleControl.riddleMathFirst(choiceOne, choiceTwo);
+        assertEquals(expResult, result);
+        
+        // fourth test
+        System.out.println("riddleMathFirst-4");
+        choiceOne = 4;
+        choiceTwo = 0;
+        expResult = -1;
+        result = riddleControl.riddleMathFirst(choiceOne, choiceTwo);
+        assertEquals(expResult, result);
+        
+        // fifth test
+        System.out.println("riddleMathFirst-5");
+        choiceOne = 1;
+        choiceTwo = 4;
+        expResult = 0;
+        result = riddleControl.riddleMathFirst(choiceOne, choiceTwo);
+        assertEquals(expResult, result);
+        
+        // sixth test
+        System.out.println("riddleMathFirst-6");
+        choiceOne = 4;
+        choiceTwo = 1;
+        expResult = 0;
+        result = riddleControl.riddleMathFirst(choiceOne, choiceTwo);
+        assertEquals(expResult, result);
+        
+        // seventh test
+        System.out.println("riddleMathFirst-7");
+        choiceOne = 4;
+        choiceTwo = 4;
+        expResult = 0;
+        result = riddleControl.riddleMathFirst(choiceOne, choiceTwo);
+        assertEquals(expResult, result);
+    } // end of testRiddleMathSecond()
 
     /**
      * Test of riddleMathThird method, of class riddleControl.
