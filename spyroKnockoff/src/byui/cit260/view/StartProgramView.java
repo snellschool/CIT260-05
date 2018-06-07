@@ -3,6 +3,8 @@
  * CIT260.05
  */
 package byui.cit260.view;
+import byui.cit260.control.GameControl;
+import byui.cit260.model.Player;
 import java.util.Scanner;
 
 /**
@@ -76,6 +78,21 @@ public class StartProgramView {
      */
     boolean doAction() {
         System.out.println("doAction() called.");
+        
+        String playersName = input[0];                       // save first value from array into variable 'playersName'
+        Player player = GameControl.savePlayer(playersName); // save playersName in variable 'player'
+        if (player == null) {
+            System.out.println("Could not create player. Please enter your name."); // Error message
+        return false;
+        }   //ENDIF
+
+        System.out.println("=================================================" + 
+                "\nWelcome to the game, " + playersName + 
+                ".\nWe hope you have a lot of fun!" + 
+                "\n=================================================");
+
+        MainMenuView mainMenuView = new MainMenuView();      // create the new View object
+        mainMenuView.displayMainMenuView();                  // display new View
 
         return true;
     } // end of doAction()

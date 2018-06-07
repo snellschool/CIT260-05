@@ -5,10 +5,15 @@
  */
 package byui.cit260.control;
 
+import byui.cit260.model.Player;
+
 /**
  *
  * @author megnol
  */
 public class GameControl {
-    
+    public static Player savePlayer(String name) {
+        System.out.println("savePlayer() is called");
+        return new Player();
+    }
 }
