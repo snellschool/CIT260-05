@@ -12,6 +12,8 @@ import java.util.Scanner;
  * @author Dallin
  */
 public class StartProgramView {
+    
+    private static String [] input = { null };
 
     /**
      * 
@@ -43,7 +45,6 @@ public class StartProgramView {
      */
     private String [] getInputs() {
         boolean valid = false;
-        String [] input = { null };
         String [] retval = { null };
         Scanner keyboard = new Scanner(System.in);
 
