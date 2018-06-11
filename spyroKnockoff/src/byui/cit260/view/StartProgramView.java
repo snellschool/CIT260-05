@@ -43,25 +43,25 @@ public class StartProgramView {
      */
     private String [] getInputs() {
         boolean valid = false;
-        String input = null;
-        String [] retval = {null};
+        String [] input = { null };
+        String [] retval = { null };
         Scanner keyboard = new Scanner(System.in);
 
         System.out.println("TODO: Enter description here.");
         while(!valid) {
             System.out.print("Enter command > ");   // prompt user for input
-            input = keyboard.nextLine().trim();     // receive input from user
+            input[0] = keyboard.nextLine().trim();     // receive input from user
             
-            if(input.length() < 1) {                // if user does not enter anything
+            if(input[0].length() < 1) {                // if user does not enter anything
                 System.out.println("Error! You must enter a non-zero entry!");
                 continue;                           // breaks out of loop and resets at prompt
             } // end of conditional
 
-            retval[0] = input;                      // stores input in return value
+            retval[0] = input[0];                      // stores input in return value
             valid = true;                           // ends loop
         } // end of while loop
         
-        System.out.println("\"" + input + "\"");//debugging
+        System.out.println("\"" + input[0] + "\"");//debugging
         
         for(int i = 0; i < 1; ++i)      // bogus code :)
             while(i < 1) {              // bogus code :)
