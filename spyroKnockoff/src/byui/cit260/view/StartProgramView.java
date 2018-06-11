@@ -48,9 +48,14 @@ public class StartProgramView {
         String [] retval = { null };
         Scanner keyboard = new Scanner(System.in);
 
-        System.out.println("TODO: Enter description here.");
+        System.out.println("During this game, you will move around in the game\n"
+                + "finding relics and gems. At various points in the game, you\n"
+                + "will be asked riddles to which you must determine the answer.\n"
+                + "Successful completion of the riddles will award you gems and\n"
+                + "allow you to progress in the game. Winning the game is\n"
+                + "dependant on successful completion of the riddles.\n\n");
         while(!valid) {
-            System.out.print("Enter command > ");   // prompt user for input
+            System.out.print("Enter your name > ");    // prompt user for input
             input[0] = keyboard.nextLine().trim();     // receive input from user
             
             if(input[0].length() < 1) {                // if user does not enter anything
@@ -59,7 +64,7 @@ public class StartProgramView {
             } // end of conditional
 
             retval[0] = input[0];                      // stores input in return value
-            valid = true;                           // ends loop
+            valid = true;                              // ends loop
         } // end of while loop
         
         System.out.println("\"" + input[0] + "\"");//debugging
@@ -78,7 +83,7 @@ public class StartProgramView {
      * @return 
      */
     boolean doAction() {
-        System.out.println("doAction() called.");
+        System.out.println("doAction() called.");//debugging
         
         String playersName = input[0];                       // save first value from array into variable 'playersName'
         Player player = GameControl.savePlayer(playersName); // save playersName in variable 'player'
