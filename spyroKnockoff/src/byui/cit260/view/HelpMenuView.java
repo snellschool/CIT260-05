@@ -6,6 +6,7 @@
 package byui.cit260.view;
 
 import java.util.Scanner;
+import static javafx.application.Platform.exit;
 
 /**
  *
@@ -68,17 +69,29 @@ public class HelpMenuView {
        System.out.println("doAction() called.");//debugging
         
        char menuItem = input[0].toUpperCase().charAt(0);  // convert to char and upper case
-        switch (menuItem) {                               // SWITCH menuItem
-            case 'M':
+        switch (menuItem) {
+            case 'M': howToMove();
                 break;
-            case 'I':
+            case 'I': viewInventory();
                 break;
-            case 'R':
+            case 'R': viewRiddleHint();
                 break;
-            case 'E':
+            case 'E': exit();
                 break;
             default: System.out.print("Invalid menu item.");
         } // ENDSWITCH
         return false; 
     } // end of doAction()
+
+    private void howToMove() {
+        System.out.println("howToMove() is called");
+    }
+
+    private void viewInventory() {
+        System.out.println("viewInventory() is called");
+    }
+
+    private void viewRiddleHint() {
+        System.out.println("viewRiddleHint() is called");
+    }
 } // end of class HelpMenuView
