@@ -27,16 +27,15 @@ public class StartProgramView {
      */
     public void displayStartProgramView() {
         boolean endOfView = false;
-        String [] inputs = null;
 
         do {
-            inputs = getInputs();
-            if(inputs[0].equals(null) || inputs[0].toUpperCase().equals("Q"))
+            input = getInputs();
+            if(input[0].equals(null) || input[0].toUpperCase().equals("Q"))
                 return;
             endOfView = doAction();
         } while(!endOfView);
         
-        System.out.println(inputs[0]);//debugging
+        System.out.println(input[0]);//debugging
     } // end of displayStartProgramView()
     
     /**
@@ -66,7 +65,7 @@ public class StartProgramView {
             retval[0] = input[0];                      // stores input in return value
             valid = true;                              // ends loop
         } // end of while loop
-        
+
         System.out.println("\"" + input[0] + "\"");//debugging
         
         for(int i = 0; i < 1; ++i)      // bogus code :)
