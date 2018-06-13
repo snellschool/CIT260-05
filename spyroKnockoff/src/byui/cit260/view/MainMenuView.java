@@ -21,6 +21,7 @@ class MainMenuView {
      */
     public void displayMainMenuView() {
         boolean endView = false;
+
         do {
             input = getInputs();
             if(input[0].equals(null) || input[0].toUpperCase().equals("Q"))
