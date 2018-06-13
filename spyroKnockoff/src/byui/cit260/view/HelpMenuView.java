@@ -1,7 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* 12 JUN 18
  */
 package byui.cit260.view;
 
@@ -14,7 +11,17 @@ import static javafx.application.Platform.exit;
  */
 public class HelpMenuView {
     private static String [] input = { null };
-    
+
+    /**
+     * default constructor for the HelpMenuView class
+     */
+    public HelpMenuView() {
+        
+    }
+
+    /**
+     * 
+     */
     public void displayHelpMenuView() {
         boolean endOfView = false;
 
@@ -27,7 +34,11 @@ public class HelpMenuView {
         
         System.out.println(input[0]);//debugging
     } // end of displayHelpMenuView()
-     
+
+    /**
+     * 
+     * @return 
+     */
     private String [] getInputs() {
         boolean valid = false;
         String [] retval = { null };
@@ -35,32 +46,28 @@ public class HelpMenuView {
 
         while(!valid) {
             System.out.print("Please enter a selection from the list:\n"
-                    + "M - Move\n"
-                    + "I - View Inventory\n"
-                    + "R - Riddle/math hints\n"
-                    + "E - Exit\n");    // prompt user for input
-            input[0] = keyboard.nextLine().trim();     // receive input from user
+                            + "M - Move\n"
+                            + "I - View Inventory\n"
+                            + "R - Riddle/math hints\n"
+                            + "E - Exit\n");            // prompt user for input
+            input[0] = keyboard.nextLine().trim();      // receive input from user
             
-            if(input[0].length() < 1) {                // if user does not enter anything
+            if(input[0].length() < 1) {                 // if user does not enter anything
                 System.out.println("Error! You must enter a non-zero entry!");
-                continue;                           // breaks out of loop and resets at prompt
+                continue;                               // breaks out of loop and resets at prompt
             } // end of conditional
 
-            retval[0] = input[0];                      // stores input in return value
-            valid = true;                              // ends loop
+            retval[0] = input[0];                       // stores input in return value
+            valid = true;                               // ends loop
         } // end of while loop
         
         System.out.println("\"" + input[0] + "\"");//debugging
-        
-        for(int i = 0; i < 1; ++i)      // bogus code :)
-            while(i < 1) {              // bogus code :)
-                System.out.println("getInputs() called.");
-                ++i;
-            }
+
+        System.out.println("getInputs() called.");
 
         return retval;
     } // end of getInputs()
-    
+
     /**
      * 
      * @return 
@@ -83,14 +90,23 @@ public class HelpMenuView {
         return false; 
     } // end of doAction()
 
+    /**
+     * 
+     */
     private void howToMove() {
         System.out.println("howToMove() is called");
     }
 
+    /**
+     * 
+     */
     private void viewInventory() {
         System.out.println("viewInventory() is called");
     }
 
+    /**
+     * 
+     */
     private void viewRiddleHint() {
         System.out.println("viewRiddleHint() is called");
     }

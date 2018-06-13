@@ -63,8 +63,8 @@ class MainMenuView {
 
     /**
      * 
-     * @param input
-     * @return 
+     * @param input the input from the user
+     * @return a boolean indicating if the view should end
      */
     boolean doAction(String [] input) {
         char menuItem = input[0].toUpperCase().charAt(0);
@@ -80,22 +80,28 @@ class MainMenuView {
         return false;
     } // end of doAction()
 
-    
+    /**
+     * 
+     */
     private void startNewGame() {
         GameControl.createNewGame(SpyroKnockoff.getPlayer());
-        //Create a new Game
-        //gameMenuView = create a new GameMenuView object
-        //gameMenuView.displayGameMenuView();
-        //}
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.displayGameMenuView();
     } // end of startNewGame()
 
-    
+    /**
+     * 
+     */
     private void restartGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        StartExistingGameView startExistingGameView = new StartExistingGameView();
+        startExistingGameView.displayStartExistingGameView();
+    } // end of restartGame()
 
-    
+    /**
+     * 
+     */
     private void getHelp() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.displayHelpMenuView();
+    } // end of getHelp()
 } // end of class MainMenuView
