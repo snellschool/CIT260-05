@@ -94,7 +94,7 @@ public class HelpMenuView {
      * 
      */
     private void howToMove() {
-        System.out.println("howToMove() is called");
+        System.out.println("HOW TO MOVE:\nEnter the character from the list for the direction you want to go - either N, S, E, or W.");
     }
 
     /**
