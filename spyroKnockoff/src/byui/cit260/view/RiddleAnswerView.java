@@ -12,20 +12,20 @@ import static javafx.application.Platform.exit;
  *
  * @author megnol
  */
-public class RiddleHintView {
-     private static String [] input = { null };
-
-    /**
-     * default constructor for the RiddleHintView class
+class RiddleAnswerView {
+    private static String [] input = { null };
+    
+     /**
+     * default constructor for the RiddleAnswerView class
      */
-    public RiddleHintView() {
+    public RiddleAnswerView() {
         
     }
 
     /**
      * 
      */
-    public void displayRiddleHintView() {
+    public void displayRiddleAnswerView() {
         boolean endOfView = false;
 
         do {
@@ -36,7 +36,7 @@ public class RiddleHintView {
         } while(!endOfView);
         
         System.out.println(input[0]);//debugging
-    } // end of displayRiddleHintView()
+    } // end of displayRiddleAnswerView()
 
     /**
      * 
@@ -48,11 +48,10 @@ public class RiddleHintView {
         Scanner keyboard = new Scanner(System.in);
 
         while(!valid) {
-            System.out.print("Which riddle do you need help with? Please enter a selection from the list:\n"
+            System.out.print("Which riddle do you want to buy the answer to? Please enter a selection from the list:\n"
                             + "A\n"
                             + "B\n"
                             + "C\n"
-                            + "D - Buy the answer"
                             + "E - Exit");
             input[0] = keyboard.nextLine().trim();      // receive input from user
             
@@ -81,13 +80,11 @@ public class RiddleHintView {
         
        char menuItem = input[0].toUpperCase().charAt(0);  // convert to char and upper case
         switch (menuItem) {
-            case 'A': riddleHintA();
+            case 'A': riddleAnswerA();
                 break;
-            case 'B': riddleHintB();
+            case 'B': riddleAnswerB();
                 break;
-            case 'C': riddleHintC();
-                break;
-            case 'D': buyRiddleAnswer();
+            case 'C': riddleAnswerC();
                 break;
             case 'E': exit();
                 break;
@@ -95,33 +92,25 @@ public class RiddleHintView {
         } // end of switch
         return false; 
     } // end of doAction()
-
-    /**
-     * 
-     */
-    private void riddleHintA() {
-        System.out.println("Think literally.");
-    }
-
-    /**
-     * 
-     */
-    private void riddleHintB() {
-        System.out.println("The difference between brothers and sisters is 1.");
-    }
-
-    /**
-     * 
-     */
-    private void riddleHintC() {
-        System.out.println("You have interracted with this very recently.");
-    }
     
+     /**
+     * 
+     */
+    private void riddleAnswerA() {
+        System.out.println("The letter 'R'.");
+    }
+
     /**
      * 
      */
-    private void buyRiddleAnswer() {
-        RiddleAnswerView riddleAnswerView = new RiddleAnswerView();
-        riddleAnswerView.displayRiddleAnswerView();
+    private void riddleAnswerB() {
+        System.out.println("Four sisters and three brothers.");
     }
-} // end of class RiddleHintView
+
+    /**
+     * 
+     */
+    private void riddleAnswerC() {
+        System.out.println("A keyboard.");
+    }
+} // end of class RiddleAnswerView
