@@ -5,47 +5,26 @@
 package byui.cit260.view;
 import byui.cit260.control.GameControl;
 import byui.cit260.model.Player;
-import java.util.Scanner;
 
 /**
  *
  * @author Dallin
  */
-public class StartProgramView {
-    
-    private static String [] input = { null };
-
+public abstract class StartProgramView extends View {
     /**
      * 
      */
     public StartProgramView() {
         
     } // end of default constructor
-    
-    /**
-     * 
-     */
-    public void displayStartProgramView() {
-        boolean endOfView = false;
 
-        do {
-            input = getInputs();
-            if(input[0].equals(null) || input[0].toUpperCase().equals("Q"))
-                return;
-            endOfView = doAction();
-        } while(!endOfView);
-        
-        System.out.println(input[0]);//debugging
-    } // end of displayStartProgramView()
-    
     /**
      * 
      * @return 
      */
-    private String [] getInputs() {
-        boolean valid = false;
+    @Override
+    public String [] getInputs() {
         String [] retval = { null };
-        Scanner keyboard = new Scanner(System.in);
 
         System.out.println("During this game, you will move around in the game\n"
                 + "finding relics and gems. At various points in the game, you\n"
@@ -53,26 +32,8 @@ public class StartProgramView {
                 + "Successful completion of the riddles will award you gems and\n"
                 + "allow you to progress in the game. Winning the game is\n"
                 + "dependant on successful completion of the riddles.\n\n");
-        while(!valid) {
-            System.out.print("Enter your name > ");    // prompt user for input
-            input[0] = keyboard.nextLine().trim();     // receive input from user
-            
-            if(input[0].length() < 1) {                // if user does not enter anything
-                System.out.println("Error! You must enter a non-zero entry!");
-                continue;                           // breaks out of loop and resets at prompt
-            } // end of conditional
 
-            retval[0] = input[0];                      // stores input in return value
-            valid = true;                              // ends loop
-        } // end of while loop
-
-        System.out.println("\"" + input[0] + "\"");//debugging
-        
-        for(int i = 0; i < 1; ++i)      // bogus code :)
-            while(i < 1) {              // bogus code :)
-                System.out.println("getInputs() called.");
-                ++i;
-            }
+        retval[0] = this.getInput("Enter your name > ");    // prompt user for input
 
         return retval;
     } // end of getInputs()
@@ -82,7 +43,7 @@ public class StartProgramView {
      * @return 
      */
     boolean doAction() {
-        System.out.println("doAction() called.");//debugging
+        String [] input = null;
         
         String playersName = input[0];                       // save first value from array into variable 'playersName'
         Player player = GameControl.savePlayer(playersName); // save playersName in variable 'player'
@@ -96,8 +57,8 @@ public class StartProgramView {
                 ".\nWe hope you have a lot of fun!" + 
                 "\n=================================================");
 
-        MainMenuView mainMenuView = new MainMenuView();      // create the new View object
-        mainMenuView.displayMainMenuView();                  // display new View
+//        MainMenuView mainMenuView = new MainMenuView();      // create the new View object
+//        mainMenuView.displayMainMenuView();                  // display new View
 
         return true;
     } // end of doAction()

@@ -13,22 +13,8 @@ import spyroknockoff.SpyroKnockoff;
  *
  * @author megnol
  */
-class MainMenuView {
+class MainMenuView /*extends View*/ {
     private static String [] input = new String[1];
-
-    /**
-     * 
-     */
-    public void displayMainMenuView() {
-        boolean endView = false;
-
-        do {
-            input = getInputs();
-            if(input[0].equals(null) || input[0].toUpperCase().equals("Q"))
-                    return;
-            endView = doAction(input);
-        } while(!endView);
-    } // end of displayMainMenuView()
 
     /**
      * 

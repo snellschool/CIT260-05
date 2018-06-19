@@ -5,7 +5,7 @@
  */
 package spyroknockoff;
 import byui.cit260.model.*;
-import byui.cit260.view.*;
+//import byui.cit260.view.*;
 
 /**
  *
@@ -20,8 +20,8 @@ public class SpyroKnockoff {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView();
+//        StartProgramView startProgramView = new StartProgramView();
+//        startProgramView.displayStartProgramView();
     }
 
     /**
