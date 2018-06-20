@@ -6,44 +6,34 @@
 package byui.cit260.view;
 
 import byui.cit260.control.GameControl;
-import java.util.Scanner;
 import spyroknockoff.SpyroKnockoff;
 
 /**
  *
  * @author megnol
  */
-class MainMenuView /*extends View*/ {
-    private static String [] input = new String[1];
+public abstract class MainMenuView extends View {
+    /**
+     * default constructor for MainMenuView
+     */
+    public MainMenuView() {
+
+    } // end of default constructor for MainMenuView
 
     /**
      * 
      * @return 
      */
-    String [] getInputs() {
-        boolean valid = false;
+    @Override
+    public String [] getInputs() {
         String [] retval = { null };
-        Scanner keyboard = new Scanner(System.in);
 
-        System.out.println("N - New Game\n"
-                        + "L - Load Game\n"
-                        + "W - Erase Game\n"
-                        + "H = Help Menu\n"
-                        + "Q = Quit Game\n\n");
-        while(!valid) {
-            System.out.print("Enter menu selection > ");    // prompt user for input
-            input[0] = keyboard.nextLine().trim();          // receive input from user
-            
-            if(input[0].length() < 1) {                     // if user does not enter anything
-                System.out.println("Error! You must enter a non-zero entry!");
-                continue;                                   // breaks out of loop and resets at prompt
-            } // end of conditional
-
-            retval[0] = input[0];                           // stores input in return value
-            valid = true;                                   // ends loop
-        } // end of while loop
-
-        System.out.println("getInputs() from MainMenuView called.");//debugging
+        retval[0] = this.getInput("N - New Game\n"
+                                + "L - Load Game\n"
+                                + "W - Erase Game\n"
+                                + "H = Help Menu\n"
+                                + "Q = Quit Game\n\n"
+                                + "Enter menu selection > ");
 
         return retval;
     } // end of getInputs()
@@ -53,7 +43,8 @@ class MainMenuView /*extends View*/ {
      * @param input the input from the user
      * @return a boolean indicating if the view should end
      */
-    boolean doAction(String [] input) {
+    @Override
+    public boolean doAction(String [] input) {
         char menuItem = input[0].toUpperCase().charAt(0);
 
         switch(menuItem) {
