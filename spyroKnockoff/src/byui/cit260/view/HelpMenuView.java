@@ -9,7 +9,7 @@ import static javafx.application.Platform.exit;
  *
  * @author megnol
  */
-public class HelpMenuView {
+public abstract class HelpMenuView extends View {
     private static String [] input = { null };
 
     /**
@@ -18,52 +18,20 @@ public class HelpMenuView {
     public HelpMenuView() {
         
     }
-
-    /**
-     * 
-     */
-    public void displayHelpMenuView() {
-        boolean endOfView = false;
-
-        do {
-            input = getInputs();
-            if(input[0].equals(null) || input[0].toUpperCase().equals("Q"))
-                return;
-            endOfView = doAction();
-        } while(!endOfView);
-        
-        System.out.println(input[0]);//debugging
-    } // end of displayHelpMenuView()
-
+    
     /**
      * 
      * @return 
      */
-    private String [] getInputs() {
-        boolean valid = false;
+    @Override
+    public String [] getInputs() {
         String [] retval = { null };
-        Scanner keyboard = new Scanner(System.in);
 
-        while(!valid) {
-            System.out.print("Please enter a selection from the list:\n"
+        retval[0] = this.getInput("Please enter a selection from the list:\n"
                             + "M - Move\n"
                             + "I - View Inventory\n"
                             + "R - Riddle/math hints\n"
-                            + "E - Exit\n");            // prompt user for input
-            input[0] = keyboard.nextLine().trim();      // receive input from user
-            
-            if(input[0].length() < 1) {                 // if user does not enter anything
-                System.out.println("Error! You must enter a non-zero entry!");
-                continue;                               // breaks out of loop and resets at prompt
-            } // end of conditional
-
-            retval[0] = input[0];                       // stores input in return value
-            valid = true;                               // ends loop
-        } // end of while loop
-        
-        System.out.println("\"" + input[0] + "\"");//debugging
-
-        System.out.println("getInputs() called.");
+                            + "E - Exit\n");
 
         return retval;
     } // end of getInputs()
@@ -73,7 +41,6 @@ public class HelpMenuView {
      * @return 
      */
     boolean doAction() {
-       System.out.println("doAction() called.");//debugging
         
        char menuItem = input[0].toUpperCase().charAt(0);  // convert to char and upper case
         switch (menuItem) {

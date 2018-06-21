@@ -54,7 +54,7 @@ public abstract class StartProgramView extends View {
 
         System.out.println("=================================================" + 
                 "\nWelcome to the game, " + playersName + 
-                ".\nWe hope you have a lot of fun!" + 
+                ". We hope you have a lot of fun!" + 
                 "\n=================================================");
 
 //        MainMenuView mainMenuView = new MainMenuView();      // create the new View object
