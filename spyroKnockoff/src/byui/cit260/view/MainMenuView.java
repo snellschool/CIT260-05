@@ -12,7 +12,7 @@ import spyroknockoff.SpyroKnockoff;
  *
  * @author megnol
  */
-public abstract class MainMenuView extends View {
+public class MainMenuView extends View {
     /**
      * default constructor for MainMenuView
      */
@@ -22,7 +22,7 @@ public abstract class MainMenuView extends View {
 
     /**
      * 
-     * @return 
+     * @return the inputs from the user
      */
     @Override
     public String [] getInputs() {
@@ -50,6 +50,7 @@ public abstract class MainMenuView extends View {
         switch(menuItem) {
             case 'N': startNewGame();   break;
             case 'R': restartGame();    break;
+            case 'I': viewInventory();  break;
             case 'H': getHelp();        break;
             case 'Q': return true;
             default: System.out.println("Invalid menu item.");
@@ -74,6 +75,15 @@ public abstract class MainMenuView extends View {
         StartExistingGameView startExistingGameView = new StartExistingGameView();
         startExistingGameView.displayStartExistingGameView();
     } // end of restartGame()
+
+    /**
+     * 
+     */
+    private void viewInventory() {
+        System.out.println("LOG: called viewInventory()");//debugging
+        InventoryView inventoryView = new InventoryView();
+        inventoryView.displayInventory();
+    } // end of viewInventory()
 
     /**
      * 

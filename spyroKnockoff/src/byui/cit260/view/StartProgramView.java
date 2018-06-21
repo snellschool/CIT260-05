@@ -20,7 +20,7 @@ public abstract class StartProgramView extends View {
 
     /**
      * 
-     * @return 
+     * @return the inputs from the user
      */
     @Override
     public String [] getInputs() {

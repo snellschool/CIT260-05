@@ -18,6 +18,9 @@ public abstract class View implements ViewInterface {
 
     } // end of default constructor for abstract class View
 
+    /**
+     * 
+     */
     @Override
     public void display() {
         boolean endOfView = false;
