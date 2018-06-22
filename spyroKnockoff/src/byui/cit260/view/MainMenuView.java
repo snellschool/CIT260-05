@@ -89,7 +89,7 @@ public class MainMenuView extends View {
      * 
      */
     private void getHelp() {
-        HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView();
+//        HelpMenuView helpMenuView = new HelpMenuView();
+//        helpMenuView.displayHelpMenuView();
     } // end of getHelp()
 } // end of class MainMenuView
