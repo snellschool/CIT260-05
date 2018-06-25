@@ -12,7 +12,7 @@ import static javafx.application.Platform.exit;
  *
  * @author megnol
  */
-class RiddleAnswerView {
+public abstract class RiddleAnswerView extends View{
     private static String [] input = { null };
     
      /**
@@ -21,52 +21,20 @@ class RiddleAnswerView {
     public RiddleAnswerView() {
         
     }
-
-    /**
-     * 
-     */
-    public void displayRiddleAnswerView() {
-        boolean endOfView = false;
-
-        do {
-            input = getInputs();
-            if(input[0].equals(null) || input[0].toUpperCase().equals("Q"))
-                return;
-            endOfView = doAction();
-        } while(!endOfView);
-        
-        System.out.println(input[0]);//debugging
-    } // end of displayRiddleAnswerView()
-
+    
     /**
      * 
      * @return 
      */
-    private String [] getInputs() {
-        boolean valid = false;
+    @Override
+    public String [] getInputs() {
         String [] retval = { null };
-        Scanner keyboard = new Scanner(System.in);
 
-        while(!valid) {
-            System.out.print("Which riddle do you want to buy the answer to? Please enter a selection from the list:\n"
-                            + "A\n"
-                            + "B\n"
-                            + "C\n"
-                            + "E - Exit");
-            input[0] = keyboard.nextLine().trim();      // receive input from user
-            
-            if(input[0].length() < 1) {                 // if user does not enter anything
-                System.out.println("Error! You must enter a non-zero entry!");
-                continue;                               // breaks out of loop and resets at prompt
-            } // end of conditional
-
-            retval[0] = input[0];                       // stores input in return value
-            valid = true;                               // ends loop
-        } // end of while loop
-        
-        System.out.println("\"" + input[0] + "\"");//debugging
-
-        System.out.println("getInputs() called.");
+        retval[0]=this.getInput("Which riddle do you want to buy the answer to? Please enter a selection from the list:\n"
+                        + "A\n"
+                        + "B\n"
+                        + "C\n"
+                         + "E - Exit");
 
         return retval;
     } // end of getInputs()
@@ -76,7 +44,6 @@ class RiddleAnswerView {
      * @return 
      */
     boolean doAction() {
-       System.out.println("doAction() called.");//debugging
         
        char menuItem = input[0].toUpperCase().charAt(0);  // convert to char and upper case
         switch (menuItem) {

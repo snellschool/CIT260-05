@@ -9,7 +9,7 @@ import java.util.Scanner;
  *
  * @author Dallin
  */
-public class GameMenuView {
+public abstract class GameMenuView extends View{
     private static String [] input = new String[1];
     
     /**
@@ -21,44 +21,16 @@ public class GameMenuView {
 
     /**
      * 
-     */
-    void displayGameMenuView() {
-        boolean endView = false;
-
-        do {
-            input = getInputs();
-            if(input[0].equals(null) || input[0].toUpperCase().equals("Q"))
-                    return;
-            endView = doAction(input);
-        } while(!endView);
-    } // end of displayGameMenuView()
-
-    /**
-     * 
      * @return 
      */
-    String [] getInputs() {
-        boolean valid = false;
+    @Override
+    public String [] getInputs() {
         String [] retval = { null };
-        Scanner keyboard = new Scanner(System.in);
 
-        System.out.println("I - View Inventory\n"
+        retval[0] = this.getInput("I - View Inventory\n"
                         + "M = View Map\n"
                         + "S = Save current game\n"
                         + "Q = Quit current game\n\n");
-        do {
-            System.out.print("Enter menu selection > ");    // prompt user for input
-            input[0] = keyboard.nextLine().trim();          // receive input from user
-            
-            if(input[0].length() < 1) {                     // if user does not enter anything
-                System.out.println("Error! You must enter a non-zero entry!");
-            } else {                                        // else, process input
-                retval[0] = input[0];                       // stores input in return value
-                valid = true;                               // ends loop
-            } // end of conditional
-        } while(!valid);
-
-        System.out.println("getInputs() from GameMenuView called.");//debugging
 
         return retval;
     } // end of getInputs()
@@ -68,7 +40,7 @@ public class GameMenuView {
      * @param input input received from the user
      * @return 
      */
-    boolean doAction(String [] input) {
+    boolean doAction() {
         char menuItem = input[0].toUpperCase().charAt(0);
         InventoryView inventory = new InventoryView();
         MapView map = new MapView();

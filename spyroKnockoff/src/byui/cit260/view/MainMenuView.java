@@ -64,8 +64,8 @@ public class MainMenuView extends View {
      */
     private void startNewGame() {
         GameControl.createNewGame(SpyroKnockoff.getPlayer());
-        GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenuView();
+//        GameMenuView gameMenuView = new GameMenuView();
+//        gameMenuView.displayGameMenuView();
     } // end of startNewGame()
 
     /**
