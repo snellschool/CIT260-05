@@ -5,6 +5,10 @@
  */
 package byui.cit260.control;
 
+import byui.cit260.model.Actor;
+import byui.cit260.model.Game;
+import byui.cit260.model.Location;
+import byui.cit260.model.Map;
 import byui.cit260.model.Player;
 import spyroknockoff.SpyroKnockoff;
 
@@ -13,9 +17,43 @@ import spyroknockoff.SpyroKnockoff;
  * @author megnol
  */
 public class GameControl {
-    
-    public static void createNewGame(Player player) {
+    public static int createNewGame(Player player) {
+        /**
+         * 
+         */
+        Game game = new Game();
+        /**
+         * 
+         */
+        Map map = new Map();
+        /**
+         * 
+         */
+        InventoryItem [] items = createItems();
+        /**
+         * number of rows for Map
+         */
+        int noOfRows = 0;
+        /**
+         * number of columns for Map
+         */
+        int noOfCols = 0;
+
         System.out.println("createNewGame() of GameControl class called.");//debugging
+        if(player == null)
+            return -1; // failure
+
+        SpyroKnockoff.setCurrentGame(game);
+        game.setInventory(items);
+        map = createMap(noOfRows, noOfCols, items);
+        if(map == null)
+            return -1; // failure
+        game.setMap(map);
+// TODO: Save a reference to the Player object in the game (?)
+// TODO: actors = createActors()
+// TODO: Save the list of actors in the Game object
+// TODO: Assign an actor to the player
+        return 1; // success!
     } // end of createNewGame()
 
     
@@ -30,4 +68,44 @@ public class GameControl {
 
         return player;
     } // end of savePlayer()
-}
+
+    public static Actor [] createActors() {
+        /**
+         * 
+         */
+        Actor [] actors = null;
+        /**
+         * 
+         */
+        Actor actor1 = new Actor();
+        /**
+         * counter for Actor array
+         */
+        short count = 0;
+
+        actor1.setCurrLoc(new Location(0, 0));          // add actor's current location
+        actor1.setPrevLoc(new Location(0, 0));          // add actor's previous location
+
+        actors[count] = actor1;                         // add Actor to actor array
+
+        return actors;
+    } // end of createActors()
+    /**
+     * 
+     * @return 
+     */
+    public static InventoryItem [] createItems() {
+        return null;//debugging
+    } // end of createItems
+
+    /**
+     * 
+     * @param noOfRows
+     * @param noOfCols
+     * @return 
+     */
+    public static Map createMap(int noOfRows, int noOfCols) {
+        
+        return null;//debugging
+    } // end of createMap
+} // end of class GameControl

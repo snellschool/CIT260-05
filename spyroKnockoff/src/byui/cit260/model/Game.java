@@ -12,13 +12,28 @@ import java.io.Serializable;
  * @author megnol
  */
 public class Game implements Serializable{
-    private long currentScore;
-    
     /**
      * 
      */
+    private long currentScore;
+    /**
+     * The player object that belongs to a given Game object.
+     */
+    private Player player;
+    /**
+     * 
+     */
+    private InventoryItem [] inventory;
+    /**
+     * 
+     */
+    private Map map;
+    
+    /**
+     * Game class default constructor
+     */
     public Game() {
-    }
+    } // end of default constructor
 
     /**
      * 
@@ -26,7 +41,7 @@ public class Game implements Serializable{
      */
     public Game(long currentScore) {
         this.currentScore = currentScore;
-    }
+    } // end of constructor
 
     
     /**
@@ -35,7 +50,7 @@ public class Game implements Serializable{
      */
     public long getCurrentScore() {
         return currentScore;
-    }
+    } // end of getCurrentScore()
 
     /**
      * 
@@ -43,7 +58,23 @@ public class Game implements Serializable{
      */
     public void setCurrentScore(long currentScore) {
         this.currentScore = currentScore;
-    }
+    } // end of setCurrentScore()
+
+    /**
+     * 
+     * @return 
+     */
+    public Player getPlayer() {
+        return player;
+    } // end of getPlayer()
+
+    /**
+     * 
+     * @param player 
+     */
+    public void setPlayer(Player player) {
+        this.player = player;
+    } // end of setPlayer()
 
     /**
      * 
@@ -54,7 +85,7 @@ public class Game implements Serializable{
         int hash = 3;
         hash = 97 * hash + (int) (this.currentScore ^ (this.currentScore >>> 32));
         return hash;
-    }
+    } // end of hashCode()
 
     /**
      * 
@@ -77,7 +108,21 @@ public class Game implements Serializable{
             return false;
         }
         return true;
-    }
-    
-    
-}
+    } // end of equals()
+
+    /**
+     * 
+     * @param inventory 
+     */
+    public void setInventory(InventoryItem[] inventory) {
+        this.inventory = inventory;
+    } // end of setInventory()
+
+    /**
+     * 
+     * @param map 
+     */
+    public void setMap(Map map) {
+        this.map = map;
+    } // end of setMap()
+} // end of class Game

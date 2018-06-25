@@ -16,11 +16,11 @@ public class Location implements Serializable {
     int yCoord;
 
     /**
-     * 
+     * Location class default construtor
      */
     public Location() {
         
-    }
+    } // end of default construtor
 
     /**
      * 
@@ -30,7 +30,7 @@ public class Location implements Serializable {
     public Location(int xCoord, int yCoord) {
         this.xCoord = xCoord;
         this.yCoord = yCoord;
-    }
+    } // end of constructor
 
     /**
      * 
@@ -38,7 +38,7 @@ public class Location implements Serializable {
      */
     public int getxCoord() {
         return xCoord;
-    }
+    } // end of getxCoord()
 
     /**
      * 
@@ -46,7 +46,7 @@ public class Location implements Serializable {
      */
     public int getyCoord() {
         return yCoord;
-    }
+    } // end of getyCoord()
 
     /**
      * 
@@ -54,7 +54,7 @@ public class Location implements Serializable {
      */
     public void setxCoord(int xCoord) {
         this.xCoord = xCoord;
-    }
+    } // end of setxCoord()
 
     /**
      * 
@@ -62,7 +62,7 @@ public class Location implements Serializable {
      */
     public void setyCoord(int yCoord) {
         this.yCoord = yCoord;
-    }
+    } // end of setyCoord()
 
     /**
      * 
@@ -74,7 +74,7 @@ public class Location implements Serializable {
         hash = 11 * hash + this.xCoord;
         hash = 11 * hash + this.yCoord;
         return hash;
-    }
+    } // end of hashCode()
 
     /**
      * 
@@ -100,5 +100,5 @@ public class Location implements Serializable {
             return false;
         }
         return true;
-    }
+    } // end of equals()
 } // end of class

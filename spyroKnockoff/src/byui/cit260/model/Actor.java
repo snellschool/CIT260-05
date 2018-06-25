@@ -17,10 +17,11 @@ public class Actor implements Serializable{
     private Location prevLoc;
     
     /**
-     * 
+     * Actor class default constructor
      */
     public Actor() {
-    }
+
+    } // end of default construtor
 
     /**
      * 
@@ -30,7 +31,7 @@ public class Actor implements Serializable{
     public Actor(Location currLoc, Location prevLoc) {
         this.currLoc = currLoc;
         this.prevLoc = prevLoc;
-    }
+    } // end of contructor
 
     /**
      * 
@@ -38,7 +39,7 @@ public class Actor implements Serializable{
      */
     public Location getCurrLoc() {
         return currLoc;
-    }
+    } // end of getCurrLoc()
 
     /**
      * 
@@ -46,7 +47,7 @@ public class Actor implements Serializable{
      */
     public void setCurrLoc(Location currLoc) {
         this.currLoc = currLoc;
-    }
+    } // end of setCurrLoc()
 
     /**
      * 
@@ -54,7 +55,7 @@ public class Actor implements Serializable{
      */
     public Location getPrevLoc() {
         return prevLoc;
-    }
+    } // end of getPrevLoc()
 
     /**
      * 
@@ -62,7 +63,7 @@ public class Actor implements Serializable{
      */
     public void setPrevLoc(Location prevLoc) {
         this.prevLoc = prevLoc;
-    }
+    } // end of setPrevLoc()
 
     /**
      * 
@@ -74,7 +75,7 @@ public class Actor implements Serializable{
         hash = 17 * hash + Objects.hashCode(this.currLoc);
         hash = 17 * hash + Objects.hashCode(this.prevLoc);
         return hash;
-    }
+    } // end of hashCode()
 
     /**
      * 
@@ -100,7 +101,5 @@ public class Actor implements Serializable{
             return false;
         }
         return true;
-    }
-    
-    
-}
+    } // end of equals()
+} // end of class Actor
