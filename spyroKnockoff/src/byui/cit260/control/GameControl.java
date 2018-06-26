@@ -95,7 +95,16 @@ public class GameControl {
      * @return 
      */
     public static InventoryItem [] createItems() {
-        return null;//debugging
+        InventoryItem[] items = new InventoryItem[25];  //Create an array large enough to hold all of the elements in the list
+        InventoryItem item =                                                //Create the next object to be added to the array
+//Call setter methods to assign values to each attribute in the object
+//Assign the object to the next position in the array
+//Repeat the above three steps for each object to be added to the array
+//…
+//return the array
+
+
+        //return null;//debugging
     } // end of createItems
 
     /**
