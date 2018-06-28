@@ -1,34 +1,42 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/* Snell, Dallin
+** CIT260.05
+*/
+
+
 package byui.cit260.control;
 
-import byui.cit260.model.Actor;
 import byui.cit260.model.Game;
 import byui.cit260.model.InventoryItem;
-import byui.cit260.model.Location;
+import byui.cit260.model.ItemType;
 import byui.cit260.model.Map;
 import byui.cit260.model.Player;
 import spyroknockoff.SpyroKnockoff;
 
 /**
  *
- * @author megnol
+ * @author Dallin
  */
 public class GameControl {
+    /**
+     * The amount of gems to create later.
+     */
+    private static final int GEMSTOCREATE = 100;
+    /**
+     * The amount of relics to create later.
+     */
+    private static final int RELICSTOCREATE = 10;
+    
     public static int createNewGame(Player player) {
         /**
-         * 
+         * The game object.
          */
         Game game = new Game();
         /**
-         * 
+         * The map object.
          */
         Map map = new Map();
         /**
-         * 
+         * All items that will be in the game.
          */
         InventoryItem [] items = createItems();
         /**
@@ -40,20 +48,16 @@ public class GameControl {
          */
         int noOfCols = 0;
 
-        System.out.println("createNewGame() of GameControl class called.");//debugging
         if(player == null)
             return -1; // failure
 
         SpyroKnockoff.setCurrentGame(game);
         game.setInventory(items);
-        map = createMap(noOfRows, noOfCols, items);
+        map = MapControl.createMap(noOfRows, noOfCols, items);
         if(map == null)
             return -1; // failure
         game.setMap(map);
 // TODO: Save a reference to the Player object in the game (?)
-// TODO: actors = createActors()
-// TODO: Save the list of actors in the Game object
-// TODO: Assign an actor to the player
         return 1; // success!
     } // end of createNewGame()
 
@@ -94,30 +98,21 @@ public class GameControl {
 //
 //        return actors;
 //    } // end of createActors()
+
     /**
      * 
-     * @return 
+     * @return the array of InventoryItems
      */
     public static InventoryItem [] createItems() {
-        InventoryItem[] items = new InventoryItem[25];  //Create an array large enough to hold all of the elements in the list
-        //InventoryItem item =                                                //Create the next object to be added to the array
-//Call setter methods to assign values to each attribute in the object
-//Assign the object to the next position in the array
-//Repeat the above three steps for each object to be added to the array
-//…
-
+        // array holding all Inventory Items in game
+        InventoryItem[] items = new InventoryItem[25];
+        // the first item (gems)
+        InventoryItem item1 = new InventoryItem(GEMSTOCREATE, "gems", "All gems located within the game.");
+        items[ItemType.gems.ordinal()] = item1;       // add first item to array
+        // the second item (relics)
+        InventoryItem item2 = new InventoryItem(RELICSTOCREATE, "relics", "All relics located within the game.");
+        items[ItemType.relics.ordinal()] = item2;     // add second item to array
 
         return items;
     } // end of createItems
-
-    /**
-     * 
-     * @param noOfRows
-     * @param noOfCols
-     * @return 
-     */
-    public static Map createMap(int noOfRows, int noOfCols) {
-        
-        return null;//debugging
-    } // end of createMap
 } // end of class GameControl

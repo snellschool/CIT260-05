@@ -3,6 +3,7 @@
 ** CIT260.05 - WEEK10
 */
 
+
 package byui.cit260.model;
 
 /**
@@ -41,5 +42,51 @@ public class InventoryItem {
         this.description = description;
     } // end of non-default contructor
 
-    
+    /**
+     * 
+     * @return 
+     */
+    public int getAmount() {
+        return this.amount;
+    } // end of getAmount()
+
+    /**
+     * 
+     * @param amount 
+     */
+    public void setAmount(int amount) {
+        this.amount = amount;
+    } // end of setAmount()
+
+    /**
+     * 
+     * @return 
+     */
+    public String getItem() {
+        return this.item;
+    } // end of getItem()
+
+    /**
+     * 
+     * @param item 
+     */
+    public void setItem(String item) {
+        this.item = item;
+    } // end of setItem()
+
+    /**
+     * 
+     * @return 
+     */
+    public String getDescription() {
+        return this.description;
+    } // end of getDescription()
+
+    /**
+     * 
+     * @param description 
+     */
+    public void setDescription(String description) {
+        this.description = description;
+    } // end of setDescription()
 } // end of class InventoryItem
