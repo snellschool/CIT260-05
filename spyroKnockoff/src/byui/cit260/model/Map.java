@@ -12,13 +12,13 @@ import java.util.Arrays;
 
 /**
  *
- * @author megnol
+ * @author Dallin
  */
 public class Map implements Serializable {
     /**
-     * 
+     * An array of locations within the map.
      */
-    private Area [] areas;
+    private Location [][] locs;
     /**
      * The number of rows in the map.
      */
@@ -36,31 +36,31 @@ public class Map implements Serializable {
 
     /**
      * 
-     * @param areas 
+     * @param locs 
      * @param rows 
      * @param cols 
      */
-    public Map(Area[] areas, int rows, int cols) {
-        this.areas = areas;
+    public Map(Location [][] locs, int rows, int cols) {
+        this.locs = locs;
         this.rows = rows;
         this.cols = cols;
     } // end of non-default construtor
 
     /**
-    * 
-    * @return 
-    */
-    public Area[] getAreas() {
-        return areas;
-    } // end of getAreas()
+     * 
+     * @return 
+     */
+    public Location[][] getLocs() {
+        return locs;
+    } // end of getLocs()
 
     /**
      * 
-     * @param areas 
+     * @param locs 
      */
-    public void setAreas(Area[] areas) {
-        this.areas = areas;
-    } // end of setAreas()
+    public void setLocs(Location[][] locs) {
+        this.locs = locs;
+    } // end of setLocs()
 
     /**
      * 
@@ -100,8 +100,10 @@ public class Map implements Serializable {
      */
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 17 * hash + Arrays.deepHashCode(this.areas);
+        int hash = 3;
+        hash = 53 * hash + Arrays.deepHashCode(this.locs);
+        hash = 53 * hash + this.rows;
+        hash = 53 * hash + this.cols;
         return hash;
     } // end of hashCode()
 
@@ -122,7 +124,13 @@ public class Map implements Serializable {
             return false;
         }
         final Map other = (Map) obj;
-        if (!Arrays.deepEquals(this.areas, other.areas)) {
+        if (this.rows != other.rows) {
+            return false;
+        }
+        if (this.cols != other.cols) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.locs, other.locs)) {
             return false;
         }
         return true;

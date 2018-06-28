@@ -23,6 +23,7 @@ public class MapControl {
      * @return 
      */
     public static Map createMap(int noOfRows, int noOfColumns, InventoryItem [] items) {
+        Location [][] locations = null;
         if(noOfRows < 0 || noOfColumns < 0)
             return null;
         else if(items == null || items.length < 1)
@@ -31,8 +32,9 @@ public class MapControl {
         Map map = new Map();
         map.setCols(noOfColumns);
         map.setRows(noOfRows);
-//locations = createLocations(noOfRows, noOfColumns)
-//Assign the locations array to the map
+        locations = createLocations(noOfRows, noOfColumns);
+        map.setLocs(locations);
+
 //scenes = createScenes()
 //questions = createQuestions()
 //assignQuestionsToScenes()
