@@ -5,9 +5,11 @@
 
 package byui.cit260.control;
 
+import byui.cit260.model.Actor;
 import byui.cit260.model.Game;
 import byui.cit260.model.InventoryItem;
 import byui.cit260.model.ItemType;
+import byui.cit260.model.Location;
 import byui.cit260.model.Map;
 import byui.cit260.model.Player;
 import spyroknockoff.SpyroKnockoff;
@@ -77,27 +79,27 @@ public class GameControl {
     /* I'm pretty sure we don't use actors in our game, but I'll keep it only
     ** commented out--just in case.
     */
-//    public static Actor [] createActors() {
-//        /**
-//         * 
-//         */
-//        Actor [] actors = null;
-//        /**
-//         * 
-//         */
-//        Actor actor1 = new Actor();
-//        /**
-//         * counter for Actor array
-//         */
-//        short count = 0;
-//
-//        actor1.setCurrLoc(new Location(0, 0));          // add actor's current location
-//        actor1.setPrevLoc(new Location(0, 0));          // add actor's previous location
-//
-//        actors[count] = actor1;                         // add Actor to actor array
-//
-//        return actors;
-//    } // end of createActors()
+    public static Actor [] createActors() {
+        /**
+         * 
+         */
+        Actor [] actors = null;
+        /**
+         * 
+         */
+        Actor actor1 = new Actor();
+        /**
+         * counter for Actor array
+         */
+        short count = 0;
+
+        actor1.setCurrLoc(new Location(0, 0));          // add actor's current location
+        actor1.setPrevLoc(new Location(0, 0));          // add actor's previous location
+
+        actors[count] = actor1;                         // add Actor to actor array
+
+        return actors;
+    } // end of createActors()
 
     /**
      * 

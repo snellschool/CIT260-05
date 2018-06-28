@@ -5,6 +5,7 @@
 
 package byui.cit260.control;
 
+import byui.cit260.model.Actor;
 import byui.cit260.model.InventoryItem;
 import byui.cit260.model.Location;
 import byui.cit260.model.Map;
@@ -90,4 +91,17 @@ public class MapControl {
     private static void assignScenesToLocations(Scene[] scenes, Location[][] locations) {
         
     } // end of assignScenesToLocations()
+    
+    private static int assignActorsToLocations(Location[][] locations) {
+        if (locations == null) { // check for invalid input
+            return -1;
+        } //endif 
+        
+        Location location = locations[1][1];
+        location.setActor(GameControl.actor1);
+        int currLoc = Actor.getCurrLoc(Point);
+        Actor.currLoc = 2;
+        Actor.currLoc = 1;
+        return 1;
+    }
 } // end of MapControl class

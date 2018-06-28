@@ -16,7 +16,7 @@ public class Location implements Serializable {
     int yCoord;
 
     /**
-     * Location class default construtor
+     * Location class default constructor
      */
     public Location() {
         
