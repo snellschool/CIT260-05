@@ -7,6 +7,7 @@ package byui.cit260.control;
 
 import byui.cit260.model.Actor;
 import byui.cit260.model.Game;
+import byui.cit260.model.InventoryItem;
 import byui.cit260.model.Location;
 import byui.cit260.model.Map;
 import byui.cit260.model.Player;
@@ -69,42 +70,44 @@ public class GameControl {
         return player;
     } // end of savePlayer()
 
-    public static Actor [] createActors() {
-        /**
-         * 
-         */
-        Actor [] actors = null;
-        /**
-         * 
-         */
-        Actor actor1 = new Actor();
-        /**
-         * counter for Actor array
-         */
-        short count = 0;
-
-        actor1.setCurrLoc(new Location(0, 0));          // add actor's current location
-        actor1.setPrevLoc(new Location(0, 0));          // add actor's previous location
-
-        actors[count] = actor1;                         // add Actor to actor array
-
-        return actors;
-    } // end of createActors()
+    /* I'm pretty sure we don't use actors in our game, but I'll keep it only
+    ** commented out--just in case.
+    */
+//    public static Actor [] createActors() {
+//        /**
+//         * 
+//         */
+//        Actor [] actors = null;
+//        /**
+//         * 
+//         */
+//        Actor actor1 = new Actor();
+//        /**
+//         * counter for Actor array
+//         */
+//        short count = 0;
+//
+//        actor1.setCurrLoc(new Location(0, 0));          // add actor's current location
+//        actor1.setPrevLoc(new Location(0, 0));          // add actor's previous location
+//
+//        actors[count] = actor1;                         // add Actor to actor array
+//
+//        return actors;
+//    } // end of createActors()
     /**
      * 
      * @return 
      */
     public static InventoryItem [] createItems() {
         InventoryItem[] items = new InventoryItem[25];  //Create an array large enough to hold all of the elements in the list
-        InventoryItem item =                                                //Create the next object to be added to the array
+        //InventoryItem item =                                                //Create the next object to be added to the array
 //Call setter methods to assign values to each attribute in the object
 //Assign the object to the next position in the array
 //Repeat the above three steps for each object to be added to the array
 //…
-//return the array
 
 
-        //return null;//debugging
+        return items;
     } // end of createItems
 
     /**
