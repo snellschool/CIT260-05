@@ -97,7 +97,7 @@ public class MapControl {
             return -1;
         } //endif 
         
-        Location location = locations[1][1];
+        Location location = locations[0][0];
         location.setActor(GameControl.actor1);
         int currLoc = Actor.getCurrLoc(Point);
         Actor.currLoc = 2;
