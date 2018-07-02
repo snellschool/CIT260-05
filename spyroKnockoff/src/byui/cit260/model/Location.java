@@ -6,13 +6,24 @@
 package byui.cit260.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
  * @author Dallin
  */
 public class Location implements Serializable {
+    /**
+     * Has the played visited the location yet?
+     */
+    Boolean visited;
+    /**
+     * 
+     */
     int xCoord;
+    /**
+     * 
+     */
     int yCoord;
 
     /**
@@ -28,6 +39,7 @@ public class Location implements Serializable {
      * @param yCoord 
      */
     public Location(int xCoord, int yCoord) {
+        this.visited = false;
         this.xCoord = xCoord;
         this.yCoord = yCoord;
     } // end of constructor
@@ -70,9 +82,10 @@ public class Location implements Serializable {
      */
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 11 * hash + this.xCoord;
-        hash = 11 * hash + this.yCoord;
+        int hash = 7;
+        hash = 41 * hash + Objects.hashCode(this.visited);
+        hash = 41 * hash + this.xCoord;
+        hash = 41 * hash + this.yCoord;
         return hash;
     } // end of hashCode()
 
@@ -97,6 +110,9 @@ public class Location implements Serializable {
             return false;
         }
         if (this.yCoord != other.yCoord) {
+            return false;
+        }
+        if (!Objects.equals(this.visited, other.visited)) {
             return false;
         }
         return true;

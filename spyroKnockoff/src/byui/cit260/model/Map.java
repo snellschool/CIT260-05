@@ -27,6 +27,10 @@ public class Map implements Serializable {
      * The number of columns in the map.
      */
     private int cols;
+    /**
+     * The description of the map.
+     */
+    private String description;
 
     /**
      * Map class default constructor.
@@ -36,14 +40,16 @@ public class Map implements Serializable {
 
     /**
      * 
-     * @param locs 
-     * @param rows 
-     * @param cols 
+     * @param locs
+     * @param rows
+     * @param cols
+     * @param description 
      */
-    public Map(Location [][] locs, int rows, int cols) {
+    public Map(Location [][] locs, int rows, int cols, String description) {
         this.locs = locs;
         this.rows = rows;
         this.cols = cols;
+        this.description = description;
     } // end of non-default construtor
 
     /**
@@ -93,6 +99,22 @@ public class Map implements Serializable {
     public void setCols(int cols) {
         this.cols = cols;
     } // end of setCols()
+
+    /**
+     * 
+     * @return 
+     */
+    public String getDescription() {
+        return description;
+    } // end of getDescription()
+
+    /**
+     * 
+     * @param description 
+     */
+    public void setDescription(String description) {
+        this.description = description;
+    } // end of setDescription()
 
     /**
      * 

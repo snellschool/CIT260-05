@@ -27,7 +27,12 @@ public class GameControl {
      * The amount of relics to create later.
      */
     private static final int RELICSTOCREATE = 10;
-    
+
+    /**
+     * 
+     * @param player
+     * @return 
+     */
     public static int createNewGame(Player player) {
         /**
          * The game object.
