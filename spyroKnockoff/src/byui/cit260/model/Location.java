@@ -16,7 +16,7 @@ public class Location implements Serializable {
     /**
      * Has the played visited the location yet?
      */
-    Boolean visited;
+    boolean visited;
     /**
      * 
      */
@@ -25,6 +25,10 @@ public class Location implements Serializable {
      * 
      */
     int yCoord;
+    /**
+     * two-letter "symbol" of location
+     */
+    private String symbol;
 
     /**
      * Location class default constructor
@@ -42,6 +46,7 @@ public class Location implements Serializable {
         this.visited = false;
         this.xCoord = xCoord;
         this.yCoord = yCoord;
+        this.symbol = "..";
     } // end of constructor
 
     /**
@@ -80,12 +85,45 @@ public class Location implements Serializable {
      * 
      * @return 
      */
+    public boolean hasVisited() {
+        return visited;
+    } // end of hasVisited()
+
+    /**
+     * 
+     * @param visited 
+     */
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    } // end of setVisited()
+
+    /**
+     * 
+     * @return 
+     */
+    public String getSymbol() {
+        return symbol;
+    } // end of getSymbol()
+
+    /**
+     * 
+     * @param symbol 
+     */
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    } // end of setSymbol()
+
+    /**
+     * 
+     * @return 
+     */
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.visited);
-        hash = 41 * hash + this.xCoord;
-        hash = 41 * hash + this.yCoord;
+        int hash = 5;
+        hash = 11 * hash + (this.visited ? 1 : 0);
+        hash = 11 * hash + this.xCoord;
+        hash = 11 * hash + this.yCoord;
+        hash = 11 * hash + Objects.hashCode(this.symbol);
         return hash;
     } // end of hashCode()
 
@@ -106,13 +144,16 @@ public class Location implements Serializable {
             return false;
         }
         final Location other = (Location) obj;
+        if (this.visited != other.visited) {
+            return false;
+        }
         if (this.xCoord != other.xCoord) {
             return false;
         }
         if (this.yCoord != other.yCoord) {
             return false;
         }
-        if (!Objects.equals(this.visited, other.visited)) {
+        if (!Objects.equals(this.symbol, other.symbol)) {
             return false;
         }
         return true;

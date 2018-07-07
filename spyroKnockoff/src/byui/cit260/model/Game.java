@@ -6,6 +6,8 @@
 package byui.cit260.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
+import java.util.Objects;
 
 /**
  *
@@ -75,6 +77,38 @@ public class Game implements Serializable{
     public void setPlayer(Player player) {
         this.player = player;
     } // end of setPlayer()
+    
+    /**
+     * 
+     * @param inventory 
+     */
+    public void setInventory(InventoryItem[] inventory) {
+        this.inventory = inventory;
+    } // end of setInventory()
+
+    /**
+     * 
+     * @return 
+     */
+    public InventoryItem[] getInventory() {
+        return inventory;
+    } // end of getInventory()
+
+    /**
+     * 
+     * @return 
+     */
+    public Map getMap() {
+        return map;
+    } // end of getMap()
+
+    /**
+     * 
+     * @param map 
+     */
+    public void setMap(Map map) {
+        this.map = map;
+    } // end of setMap()
 
     /**
      * 
@@ -82,8 +116,11 @@ public class Game implements Serializable{
      */
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 97 * hash + (int) (this.currentScore ^ (this.currentScore >>> 32));
+        int hash = 5;
+        hash = 79 * hash + (int) (this.currentScore ^ (this.currentScore >>> 32));
+        hash = 79 * hash + Objects.hashCode(this.player);
+        hash = 79 * hash + Arrays.deepHashCode(this.inventory);
+        hash = 79 * hash + Objects.hashCode(this.map);
         return hash;
     } // end of hashCode()
 
@@ -107,22 +144,15 @@ public class Game implements Serializable{
         if (this.currentScore != other.currentScore) {
             return false;
         }
+        if (!Objects.equals(this.player, other.player)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.inventory, other.inventory)) {
+            return false;
+        }
+        if (!Objects.equals(this.map, other.map)) {
+            return false;
+        }
         return true;
     } // end of equals()
-
-    /**
-     * 
-     * @param inventory 
-     */
-    public void setInventory(InventoryItem[] inventory) {
-        this.inventory = inventory;
-    } // end of setInventory()
-
-    /**
-     * 
-     * @param map 
-     */
-    public void setMap(Map map) {
-        this.map = map;
-    } // end of setMap()
 } // end of class Game

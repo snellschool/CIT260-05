@@ -9,6 +9,7 @@ package byui.cit260.model;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  *
@@ -122,10 +123,11 @@ public class Map implements Serializable {
      */
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 53 * hash + Arrays.deepHashCode(this.locs);
-        hash = 53 * hash + this.rows;
-        hash = 53 * hash + this.cols;
+        int hash = 5;
+        hash = 89 * hash + Arrays.deepHashCode(this.locs);
+        hash = 89 * hash + this.rows;
+        hash = 89 * hash + this.cols;
+        hash = 89 * hash + Objects.hashCode(this.description);
         return hash;
     } // end of hashCode()
 
@@ -150,6 +152,9 @@ public class Map implements Serializable {
             return false;
         }
         if (this.cols != other.cols) {
+            return false;
+        }
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
         if (!Arrays.deepEquals(this.locs, other.locs)) {

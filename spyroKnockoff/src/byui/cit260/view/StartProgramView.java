@@ -42,7 +42,7 @@ public abstract class StartProgramView extends View {
      * 
      * @return 
      */
-    boolean doAction() {
+    public boolean doAction() {
         String [] input = null;
         
         String playersName = input[0];                       // save first value from array into variable 'playersName'

@@ -5,10 +5,10 @@
 
 package byui.cit260.control;
 
-import byui.cit260.model.Actor;
 import byui.cit260.model.InventoryItem;
 import byui.cit260.model.Location;
 import byui.cit260.model.Map;
+import byui.cit260.model.Riddle;
 
 /**
  * 
@@ -88,7 +88,7 @@ public class MapControl {
      * 
      * @return 
      */
-    private static Question[] createQuestions() {
+    private static Riddle[] createQuestions() {
 
         return null;//debugging
     } // end of createQuestions()
@@ -98,7 +98,7 @@ public class MapControl {
      * @param questions
      * @param scenes 
      */
-    private static void assignQuestionsToScenes(Question[] questions,Scene[] scenes) {
+    private static void assignQuestionsToScenes(Riddle[] questions, Scene[] scenes) {
 
     } // end of assignQuestionsToScenes()
 
@@ -113,13 +113,14 @@ public class MapControl {
     private static int assignActorsToLocations(Location[][] locations) {
         if (locations == null) // check for invalid input
             return -1;
-        System.out.println("This method has been called.");//debugging
-        
-        Location location = locations[0][0];
-        location.setActor(GameControl.actor1);
-        int currLoc = Actor.getCurrLoc(Point);
-        Actor.currLoc = 2;
-        Actor.currLoc = 1;
-        return 1;
-    }
+        System.out.println("assignActorsToLocations method has been called from "
+                + "the MapControl class.");//debugging
+
+//        Location location = locations[0][0];
+//        location.setActor(GameControl.actor1);
+//        int currLoc = Actor.getCurrLoc(Point);
+//        Actor.currLoc = 2;
+//        Actor.currLoc = 1;
+        return -1;//debugging
+    } // end of assignActorsToLocations()
 } // end of MapControl class
