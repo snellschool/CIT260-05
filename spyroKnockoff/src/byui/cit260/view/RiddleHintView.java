@@ -12,14 +12,16 @@ import static javafx.application.Platform.exit;
  *
  * @author megnol
  */
-public abstract class RiddleHintView extends View{
+public class RiddleHintView extends View{
+    /**
+     * inputs received from the user
+     */
     private static String [] input = { null };
     /**
      * default constructor for the RiddleHintView class
      */
     public RiddleHintView() {
-        
-    }
+    } // end of default constructor for the RiddleHintView class
 
     /**
      * 
@@ -41,10 +43,40 @@ public abstract class RiddleHintView extends View{
 
     /**
      * 
+     */
+    private void riddleHintA() {
+        System.out.println("Think literally.");
+    } // end of riddleHintA()
+
+    /**
+     * 
+     */
+    private void riddleHintB() {
+        System.out.println("The difference between brothers and sisters is 1.");
+    } // end of riddleHintB()
+
+    /**
+     * 
+     */
+    private void riddleHintC() {
+        System.out.println("You have interacted with this very recently.");
+    } // end of riddleHintC()
+    
+    /**
+     * 
+     */
+    private void buyRiddleAnswer() {
+//        RiddleAnswerView riddleAnswerView = new RiddleAnswerView();
+//        riddleAnswerView.displayRiddleAnswerView();
+    } // end of buyRiddleAnswer()
+
+    /**
+     * 
+     * @param inputs
      * @return 
      */
-    boolean doAction() {
-        
+    @Override
+    public boolean doAction(String[] inputs) {
        char menuItem = input[0].toUpperCase().charAt(0);  // convert to char and upper case
         switch (menuItem) {
             case 'A': riddleHintA();
@@ -59,35 +91,6 @@ public abstract class RiddleHintView extends View{
                 break;
             default: System.out.print("Invalid menu item.");
         } // end of switch
-        return false; 
+        return false;
     } // end of doAction()
-
-    /**
-     * 
-     */
-    private void riddleHintA() {
-        System.out.println("Think literally.");
-    }
-
-    /**
-     * 
-     */
-    private void riddleHintB() {
-        System.out.println("The difference between brothers and sisters is 1.");
-    }
-
-    /**
-     * 
-     */
-    private void riddleHintC() {
-        System.out.println("You have interracted with this very recently.");
-    }
-    
-    /**
-     * 
-     */
-    private void buyRiddleAnswer() {
-//        RiddleAnswerView riddleAnswerView = new RiddleAnswerView();
-//        riddleAnswerView.displayRiddleAnswerView();
-    }
 } // end of class RiddleHintView

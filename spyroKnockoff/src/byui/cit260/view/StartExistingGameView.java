@@ -12,8 +12,7 @@ public class StartExistingGameView {
      * default constructor for StartExistingGameView class
      */
     public StartExistingGameView() {
-        
-    }
+    } // end of default constructor for StartExistingGameView class
 
     /**
      * 
@@ -21,4 +20,4 @@ public class StartExistingGameView {
     void displayStartExistingGameView() {
         System.out.println("displayStartExistingGameView() called from StartExistingGameView().");//debugging
     } // end of displayStartExistingGameView()
-}
+} // end of StartExistingGameView class

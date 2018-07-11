@@ -46,7 +46,7 @@ public abstract class View implements ViewInterface {
         Scanner keyboard = new Scanner(System.in);
 
         while(!valid) {
-            System.out.println(promptMessage);    // prompt user for input
+           System.out.print(promptMessage);              // prompt user for input
            retval = keyboard.nextLine().trim();          // receive input from user
             
             if(retval.length() < 1) {                     // if user does not enter anything

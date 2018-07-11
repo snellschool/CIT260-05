@@ -5,22 +5,23 @@
  */
 package byui.cit260.view;
 
-import java.util.Scanner;
 import static javafx.application.Platform.exit;
 
 /**
  *
  * @author megnol
  */
-public abstract class RiddleAnswerView extends View{
+public class RiddleAnswerView extends View{
+    /**
+     * inputs received from the user
+     */
     private static String [] input = { null };
     
      /**
      * default constructor for the RiddleAnswerView class
      */
     public RiddleAnswerView() {
-        
-    }
+    } // end of default constructor for the RiddleAnswerView class
     
     /**
      * 
@@ -39,12 +40,34 @@ public abstract class RiddleAnswerView extends View{
         return retval;
     } // end of getInputs()
 
+     /**
+     * 
+     */
+    private void riddleAnswerA() {
+        System.out.println("The letter 'R'.");
+    } // end of riddleAnswerA()
+
     /**
      * 
+     */
+    private void riddleAnswerB() {
+        System.out.println("Four sisters and three brothers.");
+    } // end of riddleAnswerB()
+
+    /**
+     * 
+     */
+    private void riddleAnswerC() {
+        System.out.println("A keyboard.");
+    } // end of riddleAnswerC()
+
+    /**
+     * 
+     * @param inputs
      * @return 
      */
-    boolean doAction() {
-        
+    @Override
+    public boolean doAction(String[] inputs) {
        char menuItem = input[0].toUpperCase().charAt(0);  // convert to char and upper case
         switch (menuItem) {
             case 'A': riddleAnswerA();
@@ -59,25 +82,4 @@ public abstract class RiddleAnswerView extends View{
         } // end of switch
         return false; 
     } // end of doAction()
-    
-     /**
-     * 
-     */
-    private void riddleAnswerA() {
-        System.out.println("The letter 'R'.");
-    }
-
-    /**
-     * 
-     */
-    private void riddleAnswerB() {
-        System.out.println("Four sisters and three brothers.");
-    }
-
-    /**
-     * 
-     */
-    private void riddleAnswerC() {
-        System.out.println("A keyboard.");
-    }
 } // end of class RiddleAnswerView

@@ -24,11 +24,8 @@ public class SpyroKnockoff {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /* error: can't instatiate abstract class 
-            How are we supposed to run the game then?
-        */
-//        StartProgramView startProgramView = new StartProgramView();
-//        startProgramView.doAction();
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.getInputs();
     } // end of main()
 
     /**

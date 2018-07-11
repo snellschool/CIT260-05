@@ -9,15 +9,14 @@ import static javafx.application.Platform.exit;
  *
  * @author megnol
  */
-public abstract class HelpMenuView extends View {
+public class HelpMenuView extends View {
     private static String [] input = { null };
 
     /**
      * default constructor for the HelpMenuView class
      */
     public HelpMenuView() {
-        
-    }
+    } // end of default constructor for the HelpMenuView class
     
     /**
      * 
@@ -35,27 +34,6 @@ public abstract class HelpMenuView extends View {
 
         return retval;
     } // end of getInputs()
-
-    /**
-     * 
-     * @return 
-     */
-    boolean doAction() {
-        
-       char menuItem = input[0].toUpperCase().charAt(0);  // convert to char and upper case
-        switch (menuItem) {
-            case 'M': howToMove();
-                break;
-            case 'I': viewInventory();
-                break;
-            case 'R': viewRiddleHint();
-                break;
-            case 'E': exit();
-                break;
-            default: System.out.print("Invalid menu item.");
-        } // ENDSWITCH
-        return false; 
-    } // end of doAction()
 
     /**
      * 
@@ -77,4 +55,26 @@ public abstract class HelpMenuView extends View {
     private void viewRiddleHint() {
         System.out.println("viewRiddleHint() is called");
     }
+
+    /**
+     * 
+     * @param inputs
+     * @return 
+     */
+    @Override
+    public boolean doAction(String[] inputs) {
+       char menuItem = input[0].toUpperCase().charAt(0);  // convert to char and upper case
+        switch (menuItem) {
+            case 'M': howToMove();
+                break;
+            case 'I': viewInventory();
+                break;
+            case 'R': viewRiddleHint();
+                break;
+            case 'E': exit();
+                break;
+            default: System.out.print("Invalid menu item.");
+        } // end of switch
+        return false; 
+    } // end of doAction()
 } // end of class HelpMenuView

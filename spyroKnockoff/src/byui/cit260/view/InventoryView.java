@@ -10,7 +10,13 @@ import com.sun.xml.internal.ws.util.StringUtils;
  * @author Dallin
  */
 public class InventoryView extends View {
+    /**
+     * 
+     */
     private short []    gemsArtifact;   // these variables might be moved later
+    /**
+     * 
+     */
     private String []   names;          // currently they're here to make everything work
     // indice 0     red gems
     // indice 1     blue gems

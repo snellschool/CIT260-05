@@ -15,7 +15,7 @@ import spyroknockoff.SpyroKnockoff;
  *
  * @author Dallin
  */
-public abstract class GameMenuView extends View {
+public class GameMenuView extends View {
     /**
      * receives inputs from the user
      */
@@ -25,7 +25,6 @@ public abstract class GameMenuView extends View {
      * default constructor for GameMenuView class
      */
     public GameMenuView() {
-        
     } // end of default constructor for GameMenuView class
 
     /**
@@ -43,29 +42,6 @@ public abstract class GameMenuView extends View {
 
         return retval;
     } // end of getInputs()
-
-    /**
-     * 
-     * @param input input received from the user
-     * @return 
-     */
-    boolean doAction() {
-        char menuItem = input[0].toUpperCase().charAt(0);
-        InventoryView inventory = new InventoryView();
-        MapView map = new MapView();
-        
-        // TODO: save the game when menu item is selected
-        
-        switch(menuItem) {
-            case 'I': inventory.displayInventory();     break;      // display the inventory
-            case 'M': displayMap();                     break;      // display the map
-            case 'S': System.out.println("TODO: save game"); break;//debugging
-            case 'Q': return true;                                  // quit the view
-            default: System.out.println("Invalid menu item.");      // error message
-        } // end of switch
-
-        return false;
-    } // end of doAction()
 
     /**
      * 
@@ -99,4 +75,28 @@ public abstract class GameMenuView extends View {
         } // end of row for loop
         System.out.println("----------------------------");     // row divider
     } // end of displayMap()
+
+    /**
+     * 
+     * @param inputs input received from the user
+     * @return 
+     */
+    @Override
+    public boolean doAction(String[] inputs) {
+        char menuItem = input[0].toUpperCase().charAt(0);
+        InventoryView inventory = new InventoryView();
+        MapView map = new MapView();
+        
+        // TODO: save the game when menu item is selected
+        
+        switch(menuItem) {
+            case 'I': inventory.displayInventory();     break;      // display the inventory
+            case 'M': displayMap();                     break;      // display the map
+            case 'S': System.out.println("TODO: save game"); break;//debugging
+            case 'Q': return true;                                  // quit the view
+            default: System.out.println("Invalid menu item.");      // error message
+        } // end of switch
+
+        return false;
+    } // end of doAction()
 } // end of GameMenuView class

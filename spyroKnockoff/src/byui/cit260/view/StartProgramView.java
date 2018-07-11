@@ -10,12 +10,11 @@ import byui.cit260.model.Player;
  *
  * @author Dallin
  */
-public abstract class StartProgramView extends View {
+public class StartProgramView extends View {
     /**
-     * 
+     * default constructor
      */
     public StartProgramView() {
-        
     } // end of default constructor
 
     /**
@@ -37,12 +36,17 @@ public abstract class StartProgramView extends View {
 
         return retval;
     } // end of getInputs()
-    
+
     /**
      * 
+     * @param inputs
      * @return 
      */
-    public boolean doAction() {
+    @Override
+    public boolean doAction(String[] inputs) {
+        /**
+         * the input from the user
+         */
         String [] input = null;
         
         String playersName = input[0];                       // save first value from array into variable 'playersName'
@@ -50,7 +54,7 @@ public abstract class StartProgramView extends View {
         if (player == null) {
             System.out.println("Could not create player. Please enter your name."); // Error message
         return false;
-        }   //ENDIF
+        } // end of conditional
 
         System.out.println("=================================================" + 
                 "\nWelcome to the game, " + playersName + 
